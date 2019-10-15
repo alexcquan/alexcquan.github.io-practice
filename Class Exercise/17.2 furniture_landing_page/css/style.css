@@ -3,13 +3,151 @@ body {
   }
   
   /* Grid CSS */
-  
+  #heroGrid{
+    margin: 0px 5%;
+    display: grid;
+    min-height: 500px;
+    height: 70vh;
+    grid-template-rows: 75% 25%;
+    grid-template-columns: 75% 25%;
+    grid-template-areas:
+    "featuredProduct secondaryProduct"
+    "featuredProduct CTA"
+    ;
+  }
   
   /* Category Grid CSS */
+  #featuredProduct{
+    grid-area: featuredProduct;
+    background-image: url(../images/furniture1.jpg);
+  }
   
+  #secondaryProduct{
+    grid-area: secondaryProduct;
+    background-image: url(../images/furniture2.jpg);
+  }
   
+  #CTA{
+    grid-area: CTA;
+    background-image: url(../images/woodbg.png);
+    justify-content: space-around;
+    cursor: pointer;
+  }
   
-  
+  .heroGridArea{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    display: flex;
+    position: relative;
+  }
+
+  #headline{
+    border-bottom: 5px solid #FF6200;
+    background-color: rgba(255,255,255,0.8);
+    position: absolute;
+    top:50px;
+    right: -50px;
+    z-index: 100;
+    padding: 2%;
+  }
+
+  /* Second Grid*/
+  #categoryGrid{
+    margin: 0px 5%;
+    display: grid;
+    grid-template-rows: 300px 300px 300px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "item1 item2 item3"
+    "item4 item4 item3"
+    "item5 item5 item5"
+    ;
+  }
+
+  #item1{
+    grid-area: item1;
+    background-image: url(../images/beds.png)
+  }
+
+  #item2{
+    grid-area: item2;
+    background-image: url(../images/desks.png)
+  }
+
+  #item3{
+    grid-area: item3;
+    background-image: url(../images/bookcases.png)
+  }
+
+  #item4{
+    grid-area: item4;
+    background-image: url(../images/couch.png)
+  }
+
+  #item5{
+    grid-area: item5;
+    background-image: url(../images/patio.png)
+  }
+
+  #subHeading{
+    text-align: center;
+    border-bottom: 2px solid black;
+    width: 300px;
+    margin: 50px auto;
+  }
+
+  #categoryGridArea{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 5px;
+    cursor: pointer;
+    display: grid;
+    align-content: end;
+  }
+
+  #heading{
+    background-color: rgba(0,0,0,0.7);
+    padding: 15px;
+    height: 25px;
+    color: white;
+    font-size: 18px;
+    border-bottom: 5px solid #FF6200;
+  }
+
+  /* Media Query*/
+@media only screen and (max-width:1000px){
+  #navigation{
+    display:none;
+  }
+  .icons{
+    margin-left:auto;
+  }
+}
+
+@media only screen and (max-width:600px){
+  #headline{
+    position: static;
+    margin: 20px;
+  }
+  #heroGrid{
+    grid-template-areas: 
+    "featuredProduct featuredProduct"
+    "secondaryProduct CTA"
+  }
+  #categoryGrid{
+    grid-template-rows: 300px 300px 300px 300px 300px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "item1"
+    "item2"
+    "item3"
+    "item4"
+    "item5"
+  }
+}
   /* Navigation CSS */
   /* CHECK OUT THIS CODE BELOW IF YOU WANT TO GET A REFRESHER ON FLEX */
   #navBar {
